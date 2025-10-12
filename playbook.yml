@@ -1,0 +1,10 @@
+- name: copy and cat
+  hosts: web,app,db
+  become: yes
+  tasks:
+  - name: copy the file
+    copy:
+      src: /home/ubuntu/hello.txt
+      dest: /home/ubuntu/test.txt
+  - name: cat the file
+    shell: cat /home/ubuntu/test.txt
