@@ -6,3 +6,10 @@
       copy:
         content: "Hello from Jenkins + Ansible!"
         dest: /tmp/hello.txt
+    - name: Display hello.txt contents
+      command: cat /tmp/hello.txt
+      register: result
+
+    - name: Show output
+      debug:
+        msg: "{{ result.stdout }}"
