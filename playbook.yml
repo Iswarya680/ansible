@@ -1,10 +1,8 @@
 - name: copy and cat
-  hosts: web,app,db
-  become: yes
+  hosts: localhost
+  connection: local
   tasks:
-  - name: copy the file
-    copy:
-      src: /home/ubuntu/hello.txt
-      dest: /home/ubuntu/test.txt
-  - name: cat the file
-    shell: cat /home/ubuntu/test.txt
+    - name: Create hello.txt
+      copy:
+        content: "Hello from Jenkins + Ansible!"
+        dest: /tmp/hello.txt
