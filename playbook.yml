@@ -2,12 +2,12 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Create hello.txt
+    - name: Create hello1.txt
       copy:
         content: "Hello from Jenkins + Ansible!"
-        dest: /tmp/hello.txt
-    - name: Display hello.txt contents
-      command: cat /tmp/hello.txt
+        dest: /tmp/hello1.txt
+    - name: Display hello1.txt contents
+      command: cat /tmp/hello1.txt
       register: result
 
     - name: Show output
